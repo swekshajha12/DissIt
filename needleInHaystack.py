@@ -14,3 +14,4 @@ ob = Solution()
 print(ob.strStr("sadbutsad", "sad"))
 print(ob.strStr("sadbutsad", "a"))
 print(ob.strStr("a", "a"))
+
