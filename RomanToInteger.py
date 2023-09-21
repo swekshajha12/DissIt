@@ -18,3 +18,4 @@ class Solution:
             s_old = s_curr
         out+=s_curr
         return out
+        
