@@ -1,4 +1,5 @@
 # create a binary tree
+# all these traversals of the tree are dfs
 
 class TreeNode:
     def __init__(self, value):
