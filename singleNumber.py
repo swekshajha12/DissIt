@@ -1,5 +1,5 @@
 # https://leetcode.com/problems/single-number/description/
-
+from functools import reduce
 from typing import List
 
 
@@ -15,5 +15,15 @@ class Solution:
             if value == 1:
                 return key
 
+    def Xor(self, a, b):
+        return a ^ b
+
+    def singleNumberXor(self, nums: List[int]) -> int:
+        return reduce(self.Xor, nums)
+
+        # return reduce(lambda total, el: total ^ el, nums)
+
+
 ob = Solution()
-print(ob.singleNumber([4,1,2,1,2]))
+print(ob.singleNumber([4, 1, 2, 1, 2]))
+print(ob.singleNumberXor([4, 1, 2, 1, 2]))
