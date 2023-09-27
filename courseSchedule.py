@@ -73,7 +73,6 @@ class Solution:
         # create a queue to track vertex with 0 indegree
         queue = deque([vertex for vertex in graph if in_degrees[vertex] == 0])
         topo_sort = []
-        courses_completed = 0
         while queue:
             current_vertex = queue.popleft()
             # if a node can be traversed that means that a course can be completed or
@@ -92,4 +91,4 @@ class Solution:
 num_courses = 1
 prerequisites = [[1, 0]]
 ob = Solution()
-print(ob.canFinish(num_courses, prerequisites))
+print(ob.canFinishCycleApproach(num_courses, prerequisites))
