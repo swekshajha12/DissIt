@@ -31,11 +31,11 @@ class TreeNode:
 
 # create nodes
 root = TreeNode(1)
-# root.left = TreeNode(2)
-root.right = TreeNode(2)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
 # root.left.left = TreeNode(4)
 # root.left.right = TreeNode(5)
-root.right.left = TreeNode(3)
+# root.right.left = TreeNode(3)
 
 TreeNode.in_order_traversal(root)
 # TreeNode.pre_order_traversal(root)
