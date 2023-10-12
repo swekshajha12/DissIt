@@ -2,6 +2,7 @@
 
 
 from typing import Optional
+from collections import defaultdict
 
 
 # Definition for a binary tree node.
@@ -54,6 +55,26 @@ class Solution:
 
         return solve(root, 0)
 
+    def prefixSumSolution(self, root: Optional[TreeNode], targetSum: int) -> int:
+        prefixSum = defaultdict(int)
+        prefixSum[0] = 1
+        res = 0
+
+        def dfs(root, runningSum, prefixSum, targetSum):
+            nonlocal res
+            if not root:
+                return
+            runningSum += root.val
+            res += prefixSum.get(runningSum - targetSum, 0)
+            prefixSum[runningSum] += 1
+            dfs(root.left, runningSum, prefixSum, targetSum)
+            dfs(root.right, runningSum, prefixSum, targetSum)
+
+            prefixSum[runningSum] -= 1
+
+        dfs(root, 0, prefixSum, targetSum)
+        return res
+
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
         def dfs(root, targetSum):
             if not root:
@@ -76,4 +97,4 @@ root.right.right = TreeNode(11)
 
 ob = Solution()
 print(ob.bruteForcePathSum(root, 8))
-
+print(ob.prefixSumSolution(root, 8))
