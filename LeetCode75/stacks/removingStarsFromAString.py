@@ -14,6 +14,7 @@ class Solution:
         return "".join(stk)
 
 
+
 obj = Solution()
 print(obj.removeStars("leet**cod*e"))
 print(obj.removeStars("erase*****"))
