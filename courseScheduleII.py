@@ -38,7 +38,7 @@ class Solution:
 
 
 ob = Solution()
-# print(ob.findOrder(2, [[1,0]]))
-# print(ob.findOrder(3, []))
-# print(ob.findOrder(3, [[1,0]]))
+print(ob.findOrder(2, [[1, 0]]))
+print(ob.findOrder(3, []))
+print(ob.findOrder(3, [[1, 0]]))
 print(ob.findOrder(4, [[3, 0], [0, 1]]))
