@@ -1,4 +1,8 @@
 # https://leetcode.com/problems/longest-common-prefix/
+
+from typing import List
+
+
 class Solution:
     def longestCommonPrefix(self, strs) -> str:
         common_pre = ""
@@ -27,15 +31,13 @@ class Solution:
             stk = list(common_pre)[::-1]
         return common_pre
 
-#optimised sol
-# class Solution:
-#     def longestCommonPrefix(self, v: List[str]) -> str:
-#         ans=""
-#         v=sorted(v)
-#         first=v[0]
-#         last=v[-1]
-#         for i in range(min(len(first),len(last))):
-#             if(first[i]!=last[i]):
-#                 return ans
-#             ans+=first[i]
-#         return ans
+    def longestCommonPrefixwithoutStack(self, v: List[str]) -> str:
+        ans = ""
+        v = sorted(v)
+        first = v[0]
+        last = v[-1]
+        for i in range(min(len(first), len(last))):
+            if first[i] != last[i]:
+                return ans
+            ans += first[i]
+        return ans
