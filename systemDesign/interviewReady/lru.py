@@ -26,6 +26,7 @@ class LRUCache:
             self.cache[key] = value
 
 
+
 # Example usage of the LRU cache
 cache = LRUCache(3)
 
