@@ -114,6 +114,51 @@ class VaccineScheduler(object):
         pass
 
 
+class VaccineSchedulerC(object):
+    def __init__(self):
+        # Initialize data structures to keep track of appointments and availability
+        self.appointments = {}  # {patient_id: (provider_id, appointment_time)}
+        self.availability = {}  # {day: {appointment_time: [provider_ids]}}
+
+    def schedule_appointment(self, patient_id, provider_id, appointment_time):
+        if patient_id in self.appointments:
+            raise Exception("This patient already has an appointment.")
+        if (provider_id, appointment_time) not in self.availability.get(appointment_time, []):
+            raise Exception("This appointment does not exist.")
+        self.appointments[patient_id] = (provider_id, appointment_time)
+
+    def cancel_appointment(self, patient_id):
+        if patient_id in self.appointments:
+            _, appointment_time = self.appointments.pop(patient_id)
+            self.availability[appointment_time].append(provider_id)
+
+    def get_patient_appointment(self, patient_id):
+        if patient_id in self.appointments:
+            return self.appointments[patient_id]
+        return None
+
+    def get_available_appointments(self, day):
+        return self.availability.get(day, {})
+
+    def add_appointment(self, provider_id, appointment_time):
+        if (provider_id, appointment_time) in self.availability.get(appointment_time, []):
+            raise Exception("This provider already has an appointment at this time.")
+        if appointment_time not in self.availability:
+            self.availability[appointment_time] = []
+        self.availability[appointment_time].append(provider_id)
+
+    def remove_appointment(self, provider_id, appointment_time):
+        if appointment_time in self.availability and provider_id in self.availability[appointment_time]:
+            self.availability[appointment_time].remove(provider_id)
+
+    def get_provider_schedule(self, provider_id, day):
+        schedule = []
+        for patient_id, (provider, appointment_time) in self.appointments.items():
+            if provider_id == provider and appointment_time.date() == day:
+                schedule.append((appointment_time, patient_id))
+        return sorted(schedule, key=lambda x: x[0])
+
+
 ob = VaccineScheduler()
 print(ob.add_appointment("345", "08-10-2021 10:30"))
 print(ob.schedule_appointment("123", "345", "08-10-2021 10:30"))
