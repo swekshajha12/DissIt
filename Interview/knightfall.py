@@ -114,6 +114,7 @@ class VaccineScheduler(object):
         pass
 
 
+# check it out later
 class VaccineSchedulerC(object):
     def __init__(self):
         # Initialize data structures to keep track of appointments and availability
@@ -127,6 +128,7 @@ class VaccineSchedulerC(object):
             raise Exception("This appointment does not exist.")
         self.appointments[patient_id] = (provider_id, appointment_time)
 
+    # fix this
     def cancel_appointment(self, patient_id):
         if patient_id in self.appointments:
             _, appointment_time = self.appointments.pop(patient_id)
