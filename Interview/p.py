@@ -6,6 +6,7 @@ shortUrlType = "short"
 longUrlType = "long"
 
 
+
 class UrlShortner:
     def __init__(self):
         self.url_to_code = {}
