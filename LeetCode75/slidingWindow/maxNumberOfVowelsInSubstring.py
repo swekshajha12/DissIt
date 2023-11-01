@@ -27,8 +27,28 @@ class Solution:
 
         return max_val
 
+    def maxVowelsSl(self, s: str, k: int):
+        max_res = 0
+        res = 0
+        vowels = ["a", "e", "i", "o", "u"]
+        for i in range(k):
+            if s[i] in vowels:
+                res += 1
+
+        for i in range(1, len(s) - k):
+            if s[i + k - 1] in vowels:
+                res += 1
+            if s[i - 1] in vowels:
+                res -= 1
+            if res > max_res:
+                max_res = res
+        return max_res
+
 
 obj = Solution()
 print(obj.maxVowels("abciiidef", 3))
 print(obj.maxVowels("aeiou", 2))
 print(obj.maxVowels("leetcode", 3))
+print(obj.maxVowelsSl("abciiidef", 3))
+print(obj.maxVowelsSl("aeiou", 2))
+print(obj.maxVowelsSl("leetcode", 3))
