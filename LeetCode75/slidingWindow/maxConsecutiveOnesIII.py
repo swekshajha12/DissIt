@@ -109,9 +109,27 @@ class Solution:
             return len(nums)
         return max_res
 
+    def longestOnesOpt(self, arr, k):
+        num_zeros = 0
+        max_res = 0
+        left = 0
+        for right in range(len(arr)):
+            if arr[right] == 0:
+                num_zeros += 1
+
+            while num_zeros > k:
+                if arr[left] == 0:
+                    num_zeros -= 1
+                left += 1
+            max_res = max(max_res, right - left + 1)
+
+        return max_res
+
 
 obj = Solution()
 print(obj.longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2))
 print(obj.longestOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3))
 print(obj.longestOnesBruteForce([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2))
 print(obj.longestOnesBruteForce([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3))
+print(obj.longestOnesOpt([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2))
+print(obj.longestOnesOpt([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3))
