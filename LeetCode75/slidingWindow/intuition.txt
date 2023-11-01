@@ -1,0 +1,13 @@
+Intuition: Repetitive work along a fixed window in an array or string
+Identification: Window is not gonna break, it will be continuous
+                Would be subarray/substring type of question
+                Would be asking something largest or something
+                There would be some window value given in input, say k
+                or would ask to find the window size
+
+Types:
+        1. Fixed size window : window size is given, find some value
+                                e.g: Given a window x, find the window with the largest sum
+        2. Variable size window : window size won't be given, you have to find the window
+                                  largest or smallest window subjected to some condition
+                                  e.g: Given sum x, find the largest substring which has sum 5
