@@ -4,6 +4,7 @@
 # We'll solve this question using a list of list
 
 from typing import List
+from collections import deque
 
 
 class Solution:
@@ -68,8 +69,49 @@ class Solution:
 
         return right - left + 1
 
+    def longestOnesBruteForce(self, nums: List[int], k: int) -> int:
+        num_zeros = 0
+        res = 0
+        zero_indices = deque()
+        max_res = 0
+
+        def get_longest_ones(nums, zero_indices):
+            curr_res = 0
+            nonlocal res
+
+            for i in range(len(nums)):
+                if curr_res > res:
+                    res = curr_res
+                if nums[i] == 1 or i in zero_indices:
+                    curr_res += 1
+                elif nums[i] == 0:
+                    curr_res = 0
+            if curr_res >= res:
+                res = curr_res
+            return res
+
+        for i in range(len(nums)):
+            if nums[i] == 0:
+                num_zeros += 1
+                if len(zero_indices) < k:
+                    zero_indices.append(i)
+                    val = get_longest_ones(nums, zero_indices)
+                    if val > max_res:
+                        max_res = val
+                else:
+                    zero_indices.popleft()
+                    zero_indices.append(i)
+                    val = get_longest_ones(nums, zero_indices)
+                    if val > max_res:
+                        max_res = val
+
+        if num_zeros <= k:
+            return len(nums)
+        return max_res
+
 
 obj = Solution()
-print(obj.longestOnes([1,1,1,0,0,0,1,1,1,1,0], 2))
+print(obj.longestOnes([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2))
 print(obj.longestOnes([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3))
-
+print(obj.longestOnesBruteForce([1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], 2))
+print(obj.longestOnesBruteForce([0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], 3))
