@@ -1,0 +1,48 @@
+# ref: https://www.interviewkickstart.com/learn/sorting-algorithms
+
+What are different sorting algorithms?
+There are more than 28 types of sorting algorithms. Let's check out the major ones asked in interviews.
+
+What are the characteristics of sorting algorithms?
+1. time complexity
+2. space complexity
+3. stability
+4. does it use comparison sort?
+5. parallelism
+6. Adaptability
+7. Recursion
+
+Out of these, time and space complexity are the most important characteristics
+
+
+Most common sorting algorithms:
+
+    simple sorting algorithms:
+        1. bubble sort :
+                it is one of the simplest sorting algorithms
+                it repeatedly swaps the adjacent elements till they are completely sorted
+                time complexity:
+                    best case:O(n)
+                    worst case: O(n^2)
+
+
+        2. selection sort
+        3. insertion sort
+
+    efficient sorting algorithms:
+        1. merge sort
+        2. heap sort
+        3. quick sort
+
+    non-comparison sorting algorithms:
+        1. counting sort
+        2. radix sort
+        3. bucket sort
+
+
+
+
+
+
+
+
