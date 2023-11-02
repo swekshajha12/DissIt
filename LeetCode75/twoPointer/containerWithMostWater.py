@@ -21,6 +21,18 @@ class Solution:
 
         return max_area
 
+    def containerWithMostWaterConcise(self, arr):
+        left, right = 0, len(arr) - 1
+        max_area = float('-inf')
+        while left < right:
+            max_area = max(max_area, (right - left) * min(arr[left], arr[right]))
+            if arr[left] <= arr[right]:
+                left += 1
+            else:
+                right -= 1
+
+        return max_area
+
 
 ob = Solution()
 print(ob.maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
