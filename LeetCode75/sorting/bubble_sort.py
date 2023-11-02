@@ -18,5 +18,5 @@ def bubble_sort(arr):
     return arr
 
 
-print(bubble_sort([3, 1, 2, 4]))
+print(bubble_sort([3,2,4,1]))
 print(bubble_sort([1,2,3,4]))

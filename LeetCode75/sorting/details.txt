@@ -40,6 +40,13 @@ Most common sorting algorithms:
 
 
         3. insertion sort
+                this is a fuckall algorithm which was made just for the sake of it
+                someone saw other people building
+                time complexity:
+                    best case: O(n)
+                    worst case: O(n^2)
+
+
 
 
     efficient sorting algorithms:
