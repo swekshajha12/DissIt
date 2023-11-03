@@ -14,7 +14,7 @@ class TreeNode:
 
 class Solution:
 
-    def inOrderTraversal(self, root: Optional[TreeNode]) -> list:
+    def preOrderTraversal(self, root: Optional[TreeNode]) -> list:
         res = []
 
         def solve(root):
@@ -28,8 +28,8 @@ class Solution:
         return res
 
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        leafNodesTree1 = self.inOrderTraversal(root1)
-        leafNodesTree2 = self.inOrderTraversal(root2)
+        leafNodesTree1 = self.preOrderTraversal(root1)
+        leafNodesTree2 = self.preOrderTraversal(root2)
 
         print(leafNodesTree1)
         print(leafNodesTree2)
