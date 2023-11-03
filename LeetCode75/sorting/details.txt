@@ -45,12 +45,18 @@ Most common sorting algorithms:
                 time complexity:
                     best case: O(n)
                     worst case: O(n^2)
-
+                space complexity:
+                    O(1)
 
 
 
     efficient sorting algorithms:
         1. merge sort
+            time complexity:
+                best case: O(nlogn)
+                worst case: O(nlogn)
+            space complexity:
+                O(n)
         2. heap sort
         3. quick sort
 
