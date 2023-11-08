@@ -63,6 +63,9 @@ Most common sorting algorithms:
                 best case: O(nlogn)
                 worst case: O(nlogn)
         3. quick sort
+            time complexity:
+                best case: O(nlogn)
+                worst case: O(n^2)
 
     non-comparison sorting algorithms:
         1. counting sort
