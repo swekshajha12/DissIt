@@ -58,6 +58,10 @@ Most common sorting algorithms:
             space complexity:
                 O(n)
         2. heap sort
+            heap is an ordered binary tree
+            time complexity:
+                best case: O(nlogn)
+                worst case: O(nlogn)
         3. quick sort
 
     non-comparison sorting algorithms:
