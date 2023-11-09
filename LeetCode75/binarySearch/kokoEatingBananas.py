@@ -18,6 +18,7 @@ class Solution:
         while left <= right:
             mid = (left + right) // 2
             totalHours = self.calculateHours(piles, mid)
+            # maximise on totalhours
             if totalHours <= h:
                 right = mid - 1
             elif totalHours > h:

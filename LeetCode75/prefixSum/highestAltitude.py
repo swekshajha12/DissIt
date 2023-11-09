@@ -14,7 +14,18 @@ class Solution:
         # print(res)
         return max(res)
 
+    def largestAltitudeApp2(self, gain):
+        res = 0
+        curr_alti = 0
+        for i in range(len(gain)):
+            curr_alti += gain[i]
+            res = max(res, curr_alti)
+        return res
+
+
 
 obj = Solution()
 print(obj.largestAltitude([-5, 1, 5, 0, -7]))
 print(obj.largestAltitude([-4, -3, -2, -1, 4, 3, 2]))
+print(obj.largestAltitudeApp2([-5, 1, 5, 0, -7]))
+print(obj.largestAltitudeApp2([-4, -3, -2, -1, 4, 3, 2]))

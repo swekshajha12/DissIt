@@ -74,6 +74,22 @@ class Solution:
             res = max(res, right - left)
         return res
 
+    def getlongestSubarrayOf1sforK(self, arr, k):
+        left = 0
+        num_zeroes = 0
+        max_res = float('-inf')
+        for right in range(len(arr)):
+            if arr[right] == 0:
+                num_zeroes += 1
+
+            while num_zeroes > k:
+                if arr[left] == 0:
+                    num_zeroes -= 1
+                left += 1
+
+            max_res = max(max_res, right - left - k + 1)
+        return max_res
+
 
 obj = Solution()
 print(obj.longestSubarray([1, 1, 0, 1]))
@@ -82,3 +98,9 @@ print(obj.getLongestSubarrayOf1sBruteForce([1, 1, 0, 1]))
 print(obj.getLongestSubarrayOf1sBruteForce([0, 1, 1, 1, 0, 1, 1, 0, 1]))
 print(obj.getlongestSubarrayOf1sOptimised([1, 1, 0, 1]))
 print(obj.getlongestSubarrayOf1sOptimised([0, 1, 1, 1, 0, 1, 1, 0, 1]))
+print(obj.getlongestSubarrayOf1sforK([1, 1, 0, 1], 1))
+print(obj.getlongestSubarrayOf1sforK([0, 1, 1, 1, 0, 1, 1, 0, 1], 1))
+print(obj.getlongestSubarrayOf1sforK([1, 1, 0, 1], 1))
+print(obj.getlongestSubarrayOf1sforK([0, 1, 1, 1, 0, 1, 1, 0, 1], 1))
+print(obj.getlongestSubarrayOf1sforK([1, 1, 0, 1], 1))
+print(obj.getlongestSubarrayOf1sforK([0, 1, 1, 1, 0, 1, 1, 0, 1], 1))
