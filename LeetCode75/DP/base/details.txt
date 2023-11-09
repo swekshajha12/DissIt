@@ -33,3 +33,10 @@ How to identify DP problem?
         1. return type
         2. base condition : to find this think of the smallest valid input
         3. choice diag
+
+    How to convert a recursive solution into DP:
+        1. See which variables in the recursive function is changing values
+        2. Create a matrix of size of those variables
+        3. Initialise to some constant value in all cells
+        4. Change base case to check for value in the matrix, if it's there return it
+        5. Store the values from recursive calls every time
