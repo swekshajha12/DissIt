@@ -1,0 +1,35 @@
+How to identify DP problem?
+    DP is enhanced recursion
+        1.You'd be given a choice
+            if there is overlapping subproblem in the recursion then you can solve it using dp
+            Should be a minimum of 2 recursion calls, in order for DP to apply
+            If there is just one recursion call then DP won't apply
+        2. You'd be asked optimal things like minimum or maximum
+
+    Approach:
+        Write recursive solution ---> Then memoize ---> Then write top down solution
+
+    Parent problems in DP:
+        There are a set of 10 questions in DP from which all other DP problems are derived:
+            1. 0-1 Knapsack
+                1. subset sum
+                2. equal sum partition
+                3. count of subset sum
+                4. minimum subset sum
+                5. target sum
+                6. number of subset sum given diff
+            2. Unbounded knapsack
+            3. Fibonacci
+            4. LCS : Longest common subsequence
+            5. LIS : Longest increasing subsequence
+            6. Kadane's algorithm
+            7. Matrix chain multiplication
+            8. DP on trees
+            9. DP on grid
+            10. Others
+
+
+    Pseudo code flow of any recursive function:
+        1. return type
+        2. base condition : to find this think of the smallest valid input
+        3. choice diag
