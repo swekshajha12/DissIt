@@ -34,9 +34,15 @@ How to identify DP problem?
         2. base condition : to find this think of the smallest valid input
         3. choice diag
 
-    How to convert a recursive solution into DP:
+    How to convert a recursive solution into DP (memoization):
         1. See which variables in the recursive function is changing values
         2. Create a matrix of size of those variables
         3. Initialise to some constant value in all cells
         4. Change base case to check for value in the matrix, if it's there return it
         5. Store the values from recursive calls every time
+
+
+    How to convert a recursive solution into tabulisation:
+        1. Create a matrix of size (check the changing values in the recursive solution)
+        2. Change base condition into the matrix initialisation
+        3.
