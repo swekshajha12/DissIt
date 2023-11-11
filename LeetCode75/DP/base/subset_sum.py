@@ -35,7 +35,28 @@ class Solution:
 
         return self.dp[n][target]
 
+    # todo : This is not working for all the  test cases, check what's wrong
+    def subset_sum_tabulisation(self, arr, target, n):
+        dp_tab = [[False for _ in range(target + 1)] for _ in range(n + 1)]
+        dp_tab[0][0] = True
+        for i in range(n + 1):
+            dp_tab[i][0] = True
+
+        for j in range(1, target + 1):
+            dp_tab[0][j] = False
+
+        for i in range(1, n + 1):
+            for j in range(1, target + 1):
+                if arr[i - 1] <= j:
+                    dp_tab[i][j] = dp_tab[i][j - arr[i - 1]] or dp_tab[i - 1][j]
+                else:
+                    dp_tab[i][j] = dp_tab[i - 1][j]
+        print(dp_tab)
+        return dp_tab[n][target]
+
 
 ob = Solution(5, 11)
-# print(ob.subset_sum_recursive([2, 3, 7, 8, 10], 11, 5))
+print(ob.subset_sum_recursive([2, 3, 7, 8, 10], 11, 5))
 print(ob.subset_sum_recursive_with_memoization([2, 3, 7, 8, 10], 11, 5))
+print(ob.subset_sum_tabulisation([2, 3, 7, 8, 10], 5, 5))
+
