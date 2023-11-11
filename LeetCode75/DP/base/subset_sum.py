@@ -35,7 +35,6 @@ class Solution:
 
         return self.dp[n][target]
 
-    # todo : This is not working for all the  test cases, check what's wrong
     def subset_sum_tabulisation(self, arr, target, n):
         dp_tab = [[False for _ in range(target + 1)] for _ in range(n + 1)]
         dp_tab[0][0] = True
