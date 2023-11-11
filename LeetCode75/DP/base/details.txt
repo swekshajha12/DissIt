@@ -29,7 +29,7 @@ How to identify DP problem?
             10. Others
 
 
-    Pseudo code flow of any recursive function:
+    Pseudo-code flow of any recursive function:
         1. return type
         2. base condition : to find this think of the smallest valid input
         3. choice diag
@@ -45,4 +45,4 @@ How to identify DP problem?
     How to convert a recursive solution into tabulisation:
         1. Create a matrix of size (check the changing values in the recursive solution)
         2. Change base condition into the matrix initialisation
-        3.
+        3. replace n, w with i, j
