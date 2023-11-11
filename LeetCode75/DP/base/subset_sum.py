@@ -1,3 +1,5 @@
+# subset sum is a variation of knapsack
+
 class Solution:
     def __init__(self, n, k):
         self.dp = [[-1 for _ in range(k + 1)] for _ in range(n + 1)]
