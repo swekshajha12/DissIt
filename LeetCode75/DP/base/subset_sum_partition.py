@@ -29,7 +29,8 @@ class Solution:
         else:
             return sol_impl(arr, sum(arr) // 2, len(arr))
 
-    # Question: can you think of cases where sum is even but it's not possible to partition them into 2 subsets
+    # Question: can you think of cases where sum is even but it's not possible to partition them into 2 subset
+    # answer: [1,2,5]
     def recursive_with_memoization_sol(self, arr):
         def sol_impl(arr, target, n):
             nonlocal dp
@@ -54,7 +55,34 @@ class Solution:
             dp = [[-1 for _ in range((sum(arr) // 2) + 1)] for _ in range(len(arr) + 1)]
             return sol_impl(arr, sum(arr) // 2, len(arr))
 
+    def tabulisation_sol(self, arr):
+
+        def sol_impl(arr, target, n):
+            nonlocal dp
+
+            for i in range(n + 1):
+                dp[i][0] = True
+
+            for j in range(1, target + 1):
+                dp[0][j] = False
+
+            for i in range(1, n + 1):
+                for j in range(1, target + 1):
+                    if arr[i - 1] <= j:
+                        dp[i][j] = dp[i - 1][j - arr[i - 1]] or dp[i - 1][j]
+                    else:
+                        dp[i][j] = dp[i - 1][j]
+
+            return dp[n][target]
+
+        if sum(arr) % 2 != 0:
+            return False
+        else:
+            dp = [[False for _ in range((sum(arr) // 2) + 1)] for _ in range(len(arr) + 1)]
+            return sol_impl(arr, sum(arr) // 2, len(arr))
+
 
 ob = Solution()
 print(ob.recursive_sol([1, 5, 11, 5]))
 print(ob.recursive_with_memoization_sol([42]))
+print(ob.tabulisation_sol([1, 5, 11, 5]))

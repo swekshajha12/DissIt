@@ -48,15 +48,15 @@ class Solution:
         for i in range(1, n + 1):
             for j in range(1, target + 1):
                 if arr[i - 1] <= j:
-                    dp_tab[i][j] = dp_tab[i][j - arr[i - 1]] or dp_tab[i - 1][j]
+                    dp_tab[i][j] = dp_tab[i-1][j - arr[i - 1]] or dp_tab[i - 1][j]
                 else:
                     dp_tab[i][j] = dp_tab[i - 1][j]
-        print(dp_tab)
+
         return dp_tab[n][target]
 
 
 ob = Solution(5, 11)
 print(ob.subset_sum_recursive([2, 3, 7, 8, 10], 11, 5))
 print(ob.subset_sum_recursive_with_memoization([2, 3, 7, 8, 10], 11, 5))
-print(ob.subset_sum_tabulisation([2, 3, 7, 8, 10], 5, 5))
+print(ob.subset_sum_tabulisation([2, 6, 7, 8, 10], 5, 5))
 
