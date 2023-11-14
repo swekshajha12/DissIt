@@ -32,7 +32,7 @@ class Solution:
         return min(solve(cost, 0, len(cost)), solve(cost, 1, len(cost) - 1))
 
     def tab(self, cost):
-        dp = [0] * len(cost)
+        dp = [0] * len(cost)+1
         n = len(cost)
         if n <= 0:
             return 0
@@ -65,5 +65,5 @@ ob = Solution()
 print(ob.recursive_with_memoization([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]))
 print(ob.recursive_with_memoization([1, 100]))
 print(ob.recursive_with_memoization([10, 15, 20]))
-# print(ob.tab([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]))
-# print(ob.tab([10,15,20]))
+print(ob.tab([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]))
+print(ob.tab([10,15,20]))
