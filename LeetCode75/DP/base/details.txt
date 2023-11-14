@@ -18,7 +18,11 @@ How to identify DP problem?
                 4. minimum subset sum
                 5. target sum
                 6. number of subset sum given diff
-            2. Unbounded knapsack
+            2. Unbounded knapsack : unlike 0/1 knapsack, in this multiple occurrences of same item is allowed
+                1. rod cutting
+                2. coin change 1
+                3. coin change 2
+                4. Maximum ribbon cut
             3. Fibonacci
             4. LCS : Longest common subsequence
             5. LIS : Longest increasing subsequence

@@ -42,7 +42,7 @@ class Knapsack:
 
 
 ob = Knapsack(7, 4)
-print(ob.recursive_sol([1, 3, 4, 5], [1, 4, 5, 7], 7, 4))
+print(ob.recursive_sol([1, 3, 4, 5], [2, 4, 5, 7], 7, 4))
 print(ob.recursion_with_memoization([1, 3, 4, 5], [1, 4, 5, 7], 7, 4))
 
 ob1 = Knapsack(7, 4)

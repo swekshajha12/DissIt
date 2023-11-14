@@ -35,7 +35,7 @@ class Solution:
             for i in range(k_range, 1):
                 isPossible = solve(arr, i, len(arr))
                 if isPossible:
-                    min_res = min(min_res, k_range - (2 * i))
+                    min_res = min(min_res, (2 * i)-k_range)
         return min_res
 
 
