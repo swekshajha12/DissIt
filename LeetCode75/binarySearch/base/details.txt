@@ -1,0 +1,21 @@
+How to identify a binary search problem?
+    If the array is sorted and you have to optimise the solution further, then you can consider binary search
+
+Parent problems in DP:
+    1. Binary search
+    2. order agnostic BS
+    3. 1st and last occurrence of an element
+    4. count of element in a sorted array
+    5. no of times an array is rotated
+    6. find an element in a rotated sorted array
+    7. searching in a nearly sorted array
+    8. float/ceil of an element
+    9. next letter
+    10. index of last 1 in sorted array
+    11. find the position of an element in an infinitely sorted array
+    12. min diff ele in a sorted array
+    13. Bitonic array max element
+    14. search in bitonic array
+    15. search in row wise column wise sorted matrix
+    16. Find element in sorted array that appears only once
+    17. allocate min number of pages
