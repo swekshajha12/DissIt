@@ -1,0 +1,20 @@
+How to identify a stack problem?
+    array would be present in the question
+    dependent for loops in O(n^2) solution : j is dependent on i in the for loop
+
+
+
+Parent problems:
+    1. nearest greater to left
+    2. nearest greater to right
+    3. nearest smaller to left
+    4. nearest smaller to right
+    5. stock span problem
+    6. maximum area of histogram
+    7. maximum area of rectangle in binary matrix
+    8. rain water trapping : 2 pointer?
+    9. implementing a min stack
+    10. implement stack using heap
+    11. the celebrity problem
+    12. longest valid parenthesis
+    13. iterative TOH (tower of hanoi)
